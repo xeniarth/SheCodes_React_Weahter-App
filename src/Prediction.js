@@ -10,7 +10,7 @@ export default function Prediction() {
           icon="CLEAR_DAY"
           color="white"
           size={42}
-          animate="true"
+          animate={true}
         />{" "}
       </div>
       <div className="col-md-2 weekday my-auto">Monday</div>

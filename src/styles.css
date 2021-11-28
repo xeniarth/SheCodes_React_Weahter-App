@@ -30,3 +30,9 @@
 .row.right {
   background-color: #021c1e;
 }
+
+.SourceCode a {
+  font-size: 8px;
+  color: grey;
+  text-align: center;
+}
