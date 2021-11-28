@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import Currentweather from "./Currentweather";
+import Searchbar from "./Searchbar";
+import Prediction from "./Prediction";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container text-center">
+        <div className="row h-100">
+          <div className="col-md-3 left flex-grow-1">
+            <div className="col-md my-auto">
+              <Searchbar />
+              <Currentweather />
+            </div>
+          </div>
+          <div className="col-md-9">
+            <div className="row right">
+              <div className="col-md"></div>
+              <h2> Weather Forecast </h2>
+            </div>
+            <Prediction />
+            <Prediction />
+            <Prediction />
+            <Prediction />
+            <Prediction />
+            <Prediction />
+            <Prediction />
+            <Prediction />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
