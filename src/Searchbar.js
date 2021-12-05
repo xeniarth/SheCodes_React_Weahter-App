@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Searchbar.css";
 import axios from "axios";
-import ReactAnimatedWeather from "react-animated-weather";
+import CurrentWeather from "./CurrentWeather";
 
 export default function Searchbar(props) {
   let [city, setCity] = useState(props.defaultCity);
@@ -19,6 +19,7 @@ export default function Searchbar(props) {
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -63,41 +64,7 @@ export default function Searchbar(props) {
             </div>
           </form>
         </div>
-        <div>
-          <h1>{weatherData.city}</h1>
-          <p>Date</p>
-          <p>Time</p>
-          <div className="weather">
-            <ReactAnimatedWeather
-              icon="CLOUDY"
-              color="white"
-              size={100}
-              animate="true"
-            />{" "}
-          </div>
-          <p className="currentDescription">{weatherData.description}</p>
-          <div className="col-md-12">
-            <div className="row">
-              <div className="col-md-4">
-                <div className="legend">Temperature</div>
-                <div className="currentInfo">
-                  <span>{Math.round(weatherData.mintemperature)}</span>°/
-                  <span>{Math.round(weatherData.maxtemperature)}</span>°
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="legend">Humidity</div>
-                <div className="currentInfo">{weatherData.humidity}%</div>
-              </div>
-              <div className="col-md-4">
-                <div className="legend">Wind</div>
-                <div className="currentInfo">
-                  {Math.round(weatherData.wind)} km/h
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CurrentWeather data={weatherData} />
       </div>
     );
   } else {
