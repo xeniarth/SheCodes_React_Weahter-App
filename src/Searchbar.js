@@ -12,14 +12,16 @@ export default function Searchbar(props) {
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
-      mintemperature: response.data.main.temp_min,
-      maxtemperature: response.data.main.temp_max,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
+      temp: {
+        min: response.data.main.temp_min,
+        max: response.data.main.temp_max,
+      },
     });
   }
 
