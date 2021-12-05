@@ -28,9 +28,8 @@
   color: #61dafb;
 }
 
-.SourceCode {
-  height: 4px;
-  color: grey;
+.currentDescription:first-letter {
+  text-transform: capitalize;
 }
 
 @keyframes App-logo-spin {

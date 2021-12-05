@@ -2,7 +2,6 @@ import "./App.css";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import Currentweather from "./Currentweather";
 import Searchbar from "./Searchbar";
 import Prediction from "./Prediction";
 
@@ -14,8 +13,7 @@ function App() {
           <div className="row h-100">
             <div className="col-md-3 left flex-grow-1">
               <div className="col-md my-auto">
-                <Searchbar />
-                <Currentweather />
+                <Searchbar defaultCity="Zurich" />
               </div>
             </div>
             <div className="col-md-9">
@@ -35,15 +33,18 @@ function App() {
           </div>
         </div>
       </div>
-      <p className="SourceCode d-flex justify-content-center">
-        <a
-          href="https://github.com/xeniarth/SheCodes_React_Weahter-App"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open-source code by Xenia Artho
-        </a>
-      </p>
+      <footer>
+        {" "}
+        <p className="SourceCode d-flex justify-content-center">
+          <a
+            href="https://github.com/xeniarth/SheCodes_React_Weahter-App"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open-source code by Xenia Artho
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

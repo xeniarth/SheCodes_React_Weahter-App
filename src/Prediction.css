@@ -7,6 +7,12 @@
   box-shadow: 0px 0px 5px hsla(0, 0%, 0%, 0.3);
 }
 
+#WeatherIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .weekday {
   font-weight: bold;
 }
